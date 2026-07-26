@@ -1,0 +1,24 @@
+title: "Can You Spot a Great Company Before It Takes Off?"
+description: >
+  An AI experiment: reading annual reports to find early signals of which small-cap
+  companies will compound — before they do.
+
+# For a project site (github.com/grumpyclimber/5houses → grumpyclimber.github.io/5houses):
+#   baseurl: "/5houses"
+# For a custom domain or user/org site:
+#   baseurl: ""
+baseurl: "/5houses"
+url: "https://grumpyclimber.github.io"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+highlighter: rouge
+
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - vendor/
