@@ -183,7 +183,7 @@ Starting from ~2,000 ASX-listed tickers, a quant filter cut the list to companie
 
 The top scorer was **QOR (Qoria)** at **100 out of 100** — the only company in the entire dataset, training set included, to match PME's FY2016 score. Qoria makes parental controls and digital safety software for schools. Contracted recurring revenue growing at ~40%, margins expanding, specific annual recurring revenue targets disclosed, entirely organic growth. Every signal present.
 
-Behind it: **NXL (Nuix)**, an investigative analytics company, at 96. **FWD (Fleetwood)**, a modular buildings company with an order book and margin profile almost identical to the training set's engineering winners, at 88.
+Behind it: **NXL (Nuix)**, an investigative analytics company, at 96. **FWD (Fleetwood)**, a modular buildings company with a margin profile similar to the training set's engineering winners (EBIT 2% → 7.5%), at 88.
 
 Three things stood out from the scan:
 

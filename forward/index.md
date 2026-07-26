@@ -34,16 +34,16 @@ A score above 50 puts a company in the top half of the training set's winners. I
 | # | Ticker | Company | Score | Sector | What the rubric saw |
 |:-:|--------|---------|:-----:|--------|---------------------|
 | 1 | QOR | Qoria *(delisted July 2026)* | **100** | Technology / SaaS | All five signals present. Growing contracted ARR (order book equivalent), expanding margins, execution-focused tone, quantified revenue guidance, strong organic growth. The only current company to hit the same profile as PME FY2016. |
-| 2 | NXL | Nuix | **96** | Technology / Analytics | Quantified order book (investigation analytics backlog), margins expanding, specific ARR targets disclosed. Revenue 2x over two years. |
-| 3 | FWD | Fleetwood | **88** | Industrials / Modular Buildings | Order book, margin expansion, execution tone, and quantified forward guidance all present. Matches the structural profile of the training set's engineering winners (NWH, MAH, ACF). |
+| 2 | NXL | Nuix | **96** | Technology / Analytics | ACV of $234M (order book equivalent), EBITDA margin expanding from 14.6% to 21.8%, 96% subscription revenue. Revenue up 15.2% organically. |
+| 3 | FWD | Fleetwood | **88** | Industrials / Modular Buildings | Order book present ($115M) but declining from $178M. Margin expansion strong (EBIT 2% → 7.5%), execution tone, repeatable revenue 83%. Matches structural profile of training set engineering winners. |
 | 4 | SFR | Sandfire Resources | **70** | Materials / Copper | Perfect margins, tone, guidance, and revenue signals. Order book limited by spot-price exposure. Copper project pipeline partially substitutes. |
-| 5 | CIP | Centuria Industrial REIT | **68** | Real Estate | Contracted lease pipeline provides order book equivalent. High-visibility bonus triggered by quantified forward NOI guidance. |
+| 5 | CIP | Centuria Industrial REIT | **68** | Real Estate | Long-dated leases (WALE 7.1yr, 95.7% occupancy) provide revenue visibility. Quantified FFO guidance (18.2–18.5 cpu). Like-for-like NOI growth 5.1%. |
 | 6 | MSV | Mitchell Services | **55** | Materials / Drilling | Margins, tone, guidance, and revenue all present. Order book present. Matches the mining services profile of several training winners. |
 | 7 | PLT | Plenti Group | **55** | Financial Services / Credit | Note: PLT was a control in the training set (0.54x). Current score has improved — margin expansion and loan book growth now present. Re-rating possible if execution continues. |
-| 8 | DUG | DUG Technology | **53** | Technology / HPC | Strong order book (contracted HPC capacity), founder-operator tone. Margins early-stage but improving. |
-| 9 | VGL | Vista Group | **52** | Software / Cinema | SaaS metrics (ARR, net revenue retention) substitute for traditional order book. Margins recovering post-COVID. Execution tone consistent. |
-| 10 | MLG | MLG Oz | **51** | Materials / Mining Services | Margins and revenue profile match training set industrials. Order book present. |
-| 11 | PEN | Peninsula Energy | **51** | Energy / Uranium | Quantified production guidance and contracted offtake (order book equivalent). Uranium spot price tailwind. |
+| 8 | DUG | DUG Technology | **53** | Technology / HPC | Record order book (US$52M backlog), founder-operator tone. EBITDA margin stable at 25%. Revenue declined 4.5% full-year but H2 was stronger (30% margin). |
+| 9 | VGL | Vista Group | **52** | Software / Cinema | SaaS metrics (ARR $163M, 90% recurring revenue) substitute for traditional order book. EBITDA margin expanding (14.4% → 17.2%). Quantified FY26 guidance provided. |
+| 10 | MLG | MLG Oz | **51** | Materials / Mining Services | Margins expanding (11.8% → 12.2%), revenue up 15.5%. Order book described as "robust" but not quantified. |
+| 11 | PEN | Peninsula Energy | **51** | Energy / Uranium | Quantified production guidance (0.4–0.5 Mlbs CY2026) and contracted offtake through 2034. Pre-revenue — $0 sales in FY2025, losses continuing. Score driven by forward visibility, not current operations. |
 | 12 | REP | RAM Essential Services | **50** | Real Estate / Infrastructure | Contracted pipeline + quantified distribution guidance. |
 
 <div class="chart-wrap">
