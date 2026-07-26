@@ -33,7 +33,7 @@ A score above 50 puts a company in the top half of the training set's winners. I
 
 | # | Ticker | Company | Score | Sector | What the rubric saw |
 |:-:|--------|---------|:-----:|--------|---------------------|
-| 1 | QOR | Qoria | **100** | Technology / SaaS | All five signals present. Growing contracted ARR (order book equivalent), expanding margins, execution-focused tone, quantified revenue guidance, strong organic growth. The only current company to hit the same profile as PME FY2016. |
+| 1 | QOR | Qoria *(delisted July 2026)* | **100** | Technology / SaaS | All five signals present. Growing contracted ARR (order book equivalent), expanding margins, execution-focused tone, quantified revenue guidance, strong organic growth. The only current company to hit the same profile as PME FY2016. |
 | 2 | NXL | Nuix | **96** | Technology / Analytics | Quantified order book (investigation analytics backlog), margins expanding, specific ARR targets disclosed. Revenue 2x over two years. |
 | 3 | FWD | Fleetwood | **88** | Industrials / Modular Buildings | Order book, margin expansion, execution tone, and quantified forward guidance all present. Matches the structural profile of the training set's engineering winners (NWH, MAH, ACF). |
 | 4 | SFR | Sandfire Resources | **70** | Materials / Copper | Perfect margins, tone, guidance, and revenue signals. Order book limited by spot-price exposure. Copper project pipeline partially substitutes. |
@@ -50,7 +50,9 @@ A score above 50 puts a company in the top half of the training set's winners. I
 
 ## What Stands Out
 
-**QOR (Qoria) is the highest-scoring company in the entire dataset** — including the training set. 100/100 on the current rubric, matching PME FY2016. Qoria makes parental controls software (Circle, Bark) sold to schools and families. It has contracted ARR growing at ~40%, expanding margins, and specific forward guidance on ARR targets. Whether it's the next PME is unknowable from this rubric — but it's showing every signal that the training winners showed.
+**QOR (Qoria) is the highest-scoring company in the entire dataset** — including the training set. 100/100 on the current rubric, matching PME FY2016. Qoria makes parental controls software (Circle, Bark) sold to schools and families. It had contracted ARR growing at ~40%, expanding margins, and specific forward guidance on ARR targets.
+
+**Update (July 2026): Qoria was acquired by US digital safety group Aura Consolidated Group and delisted from the ASX on 20 July 2026.** Shareholders approved the scheme 91.49% in favour; the implied acquisition price of ~A$0.40 per share represented a 32.4% premium to the 30-day VWAP. The combined entity now trades on the ASX as AXQ. The rubric scored it 100 before any of this was public — it was showing every signal the training winners showed, and it was acquired at a premium within months of the scan.
 
 **The rubric finds companies outside the engineering/mining cluster.** QOR, NXL, DUG, and VGL are all technology or software companies — not the industrials that dominated the training set. This is the same property the rubric showed with PME: the signals aren't sector-specific.
 
