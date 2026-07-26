@@ -46,6 +46,95 @@ A score above 50 puts a company in the top half of the training set's winners. I
 | 11 | PEN | Peninsula Energy | **51** | Energy / Uranium | Quantified production guidance and contracted offtake (order book equivalent). Uranium spot price tailwind. |
 | 12 | REP | RAM Essential Services | **50** | Real Estate / Infrastructure | Contracted pipeline + quantified distribution guidance. |
 
+<div class="chart-wrap">
+  <canvas id="forwardChart"></canvas>
+</div>
+<p class="chart-caption">57 ASX small-caps scored against the same rubric used to build the training set. The dashed line marks 50 — in the training set, every company above 50 was a winner. Hover for score. QOR is marked as delisted following its July 2026 acquisition.</p>
+
+<script>
+(function() {
+  var ctx = document.getElementById('forwardChart');
+  var labels = ['QOR — Qoria*','NXL — Nuix','FWD — Fleetwood','SFR — Sandfire','CIP — Centuria Ind.','MSV — Mitchell Svcs','PLT — Plenti','DUG — DUG Tech','VGL — Vista Group','MLG — MLG Oz','PEN — Peninsula Energy','REP — RAM Essential'];
+  var scores = [100, 96, 88, 70, 68, 55, 55, 53, 52, 51, 51, 50];
+  var colors = scores.map(function(s) {
+    return s >= 80 ? 'rgba(34,197,94,0.82)'
+         : s >= 60 ? 'rgba(34,197,94,0.65)'
+         : 'rgba(34,197,94,0.48)';
+  });
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Rubric Score',
+        data: scores,
+        backgroundColor: colors,
+        borderColor: 'rgba(22,163,74,0.9)',
+        borderWidth: 1.5,
+        borderRadius: 3
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(c) { return 'Score: ' + c.raw + ' / 100'; }
+          },
+          backgroundColor: '#fff',
+          titleColor: '#1c1c1e',
+          bodyColor: '#1c1c1e',
+          borderColor: '#e5e7eb',
+          borderWidth: 1,
+          padding: 10,
+          bodyFont: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }
+        }
+      },
+      scales: {
+        x: {
+          min: 0, max: 115,
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { stepSize: 25 }
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: {
+              family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+              size: 11.5
+            }
+          }
+        }
+      }
+    },
+    plugins: [{
+      id: 'threshold-line',
+      afterDraw: function(chart) {
+        var c2 = chart.ctx;
+        var xAxis = chart.scales.x;
+        var yAxis = chart.scales.y;
+        var x = xAxis.getPixelForValue(50);
+        c2.save();
+        c2.beginPath();
+        c2.moveTo(x, yAxis.top);
+        c2.lineTo(x, yAxis.bottom);
+        c2.lineWidth = 1.5;
+        c2.strokeStyle = 'rgba(107,114,128,0.55)';
+        c2.setLineDash([5, 4]);
+        c2.stroke();
+        c2.fillStyle = '#6b7280';
+        c2.font = "11px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+        c2.fillText('50 — winner zone', x + 6, yAxis.top + 14);
+        c2.restore();
+      }
+    }]
+  });
+})();
+</script>
+
 ---
 
 ## What Stands Out

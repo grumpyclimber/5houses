@@ -106,6 +106,191 @@ All 20 companies across FY2019–FY2022 (main set). Signals shown as years-prese
 
 The combo column is the decisive one — no control ever triggered the compounding operator combination in any year. Four winners did.
 
+<div class="chart-wrap">
+  <canvas id="scatterChart"></canvas>
+</div>
+<p class="chart-caption">Each dot is one company. Hover for ticker and score. Winners (green) averaged 52.6; controls (red) averaged 38.7. ALC scores 70 but returned only 0.26× — the main anomaly. Purple triangles are the out-of-sample test (PME, HUB), scored on earlier data not used to build the rubric.</p>
+
+<script>
+(function() {
+  var ctx = document.getElementById('scatterChart');
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: 'Winners',
+          data: [
+            {x:90, y:2.9,  t:'ACF'},
+            {x:70, y:5.5,  t:'MAH'},
+            {x:66, y:5.3,  t:'GNG'},
+            {x:65, y:15.0, t:'DRO'},
+            {x:63, y:5.6,  t:'NWH'},
+            {x:56, y:3.2,  t:'PRN'},
+            {x:51, y:3.4,  t:'MND'},
+            {x:35, y:2.67, t:'TLX'},
+            {x:30, y:2.2,  t:'DTL'},
+            {x:30, y:6.5,  t:'CMM'},
+            {x:23, y:8.7,  t:'NEU'}
+          ],
+          backgroundColor: 'rgba(34,197,94,0.75)',
+          borderColor: 'rgba(22,163,74,1)',
+          borderWidth: 1.5,
+          pointRadius: 7,
+          pointHoverRadius: 9
+        },
+        {
+          label: 'Controls',
+          data: [
+            {x:70, y:0.26, t:'ALC'},
+            {x:45, y:0.66, t:'RDY'},
+            {x:40, y:0.74, t:'ACL'},
+            {x:40, y:0.74, t:'PPS'},
+            {x:39, y:0.38, t:'OFX'},
+            {x:31, y:0.18, t:'PPE'},
+            {x:30, y:0.42, t:'CVN'},
+            {x:28, y:0.54, t:'CLV'},
+            {x:25, y:0.54, t:'PLT'}
+          ],
+          backgroundColor: 'rgba(239,68,68,0.75)',
+          borderColor: 'rgba(220,38,38,1)',
+          borderWidth: 1.5,
+          pointRadius: 7,
+          pointHoverRadius: 9
+        },
+        {
+          label: 'Out-of-sample',
+          data: [
+            {x:100, y:10.96, t:'PME'},
+            {x:48,  y:6.65,  t:'HUB'}
+          ],
+          backgroundColor: 'rgba(99,102,241,0.85)',
+          borderColor: 'rgba(79,70,229,1)',
+          borderWidth: 1.5,
+          pointRadius: 8,
+          pointStyle: 'triangle',
+          pointHoverRadius: 10
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 12 },
+            padding: 16,
+            usePointStyle: true
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(c) {
+              var d = c.raw;
+              return d.t + '  |  score ' + d.x + '  |  ' + d.y + '×';
+            }
+          },
+          titleColor: '#1c1c1e',
+          bodyColor: '#1c1c1e',
+          backgroundColor: '#fff',
+          borderColor: '#e5e7eb',
+          borderWidth: 1,
+          padding: 10,
+          bodyFont: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Rubric Score', font: { size: 12 } },
+          min: 0, max: 115,
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { stepSize: 20 }
+        },
+        y: {
+          title: { display: true, text: '5-Year Multiple (×)', font: { size: 12 } },
+          min: 0,
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<div class="chart-wrap">
+  <canvas id="signalChart"></canvas>
+</div>
+<p class="chart-caption">% of companies in each group where the signal appeared in at least one scored year. Individual signals barely separate the groups — execution tone and forward guidance are near-universal. The combination signal (order book + margins + execution tone firing in the same year) is the clean separator: 4 of 11 winners triggered it; zero controls ever did.</p>
+
+<script>
+(function() {
+  var ctx2 = document.getElementById('signalChart');
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Order Book', 'Margin\nExpansion', 'Exec Tone', 'Fwd Guidance', 'Org. Growth', 'Combo\n(all three)'],
+      datasets: [
+        {
+          label: 'Winners (11)',
+          data: [73, 91, 100, 91, 73, 36],
+          backgroundColor: 'rgba(34,197,94,0.7)',
+          borderColor: 'rgba(22,163,74,1)',
+          borderWidth: 1.5,
+          borderRadius: 3
+        },
+        {
+          label: 'Controls (9)',
+          data: [67, 89, 100, 100, 44, 0],
+          backgroundColor: 'rgba(239,68,68,0.7)',
+          borderColor: 'rgba(220,38,38,1)',
+          borderWidth: 1.5,
+          borderRadius: 3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 12 },
+            padding: 16,
+            usePointStyle: true
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(c) { return c.dataset.label + ': ' + c.raw + '% of companies'; }
+          },
+          backgroundColor: '#fff',
+          titleColor: '#1c1c1e',
+          bodyColor: '#1c1c1e',
+          borderColor: '#e5e7eb',
+          borderWidth: 1,
+          padding: 10,
+          bodyFont: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }
+        }
+      },
+      scales: {
+        y: {
+          min: 0, max: 115,
+          ticks: {
+            callback: function(v) { return v + '%'; },
+            stepSize: 20
+          },
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+})();
+</script>
+
 ---
 
 ## Cross-Cycle Validation (Track 3 — FY2016/2017)
