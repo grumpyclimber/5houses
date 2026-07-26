@@ -17,37 +17,35 @@ Winner threshold: market cap grew to ≥ 2.5x. Control threshold: market cap end
 
 ### Winners
 
-| Ticker | Company | Sector | 5-Year Multiple | Track |
-|--------|---------|--------|----------------|-------|
-| DRO | DroneShield | Industrials / Aerospace & Defence | **15.0x** | Main |
-| CMM | Capricorn Metals | Basic Materials / Gold | **6.5x** | Main |
-| NEU | Neuren Pharmaceuticals | Healthcare / Biotech | **8.7x** | Main |
-| NWH | NRW Holdings | Industrials / Engineering & Construction | **5.6x** | Main |
-| MAH | Macmahon Holdings | Industrials / Engineering & Construction | **5.5x** | Main |
-| GNG | GR Engineering Services | Industrials / Engineering & Construction | **5.3x** | Main |
-| MND | Monadelphous Group | Industrials / Engineering & Construction | **3.4x** | Main |
-| PRN | Perenti | Industrials / Engineering & Construction | **3.2x** | Main |
-| ACF | Acrow Limited | Industrials / Engineering & Construction | **2.9x** | Main |
-| TLX | Telix Pharmaceuticals | Healthcare / Biotech | **2.67x** | Track 2 |
-| DTL | Data#3 | Technology / IT Services | **2.2x** | Main |
+| Ticker | Company | Sector | 5-Year Multiple |
+|--------|---------|--------|----------------|
+| DRO | DroneShield | Industrials / Aerospace & Defence | **15.0x** |
+| CMM | Capricorn Metals | Basic Materials / Gold | **6.5x** |
+| NEU | Neuren Pharmaceuticals | Healthcare / Biotech | **8.7x** |
+| NWH | NRW Holdings | Industrials / Engineering & Construction | **5.6x** |
+| MAH | Macmahon Holdings | Industrials / Engineering & Construction | **5.5x** |
+| GNG | GR Engineering Services | Industrials / Engineering & Construction | **5.3x** |
+| MND | Monadelphous Group | Industrials / Engineering & Construction | **3.4x** |
+| PRN | Perenti | Industrials / Engineering & Construction | **3.2x** |
+| ACF | Acrow Limited | Industrials / Engineering & Construction | **2.9x** |
+| TLX | Telix Pharmaceuticals | Healthcare / Biotech | **2.67x** |
+| DTL | Data#3 | Technology / IT Services | **2.2x** |
 
 DTL at 2.2x is technically below the 2.5x winner threshold and was kept as a documented borderline case.
 
 ### Controls
 
-| Ticker | Company | Sector | 5-Year Multiple | Track |
-|--------|---------|--------|----------------|-------|
-| PPE | People Infrastructure | Industrials / Staffing | **0.18x** | Main |
-| ALC | Alcidion Group | Healthcare / Health IT | **0.26x** | Main |
-| OFX | OFX Group | Financial Services / Payments | **0.38x** | Main |
-| CVN | Carnarvon Energy | Energy / Oil & Gas Exploration | **0.42x** | Main |
-| CLV | Clover Corporation | Consumer Defensive / Foods | **0.54x** | Main |
-| PLT | Plenti Group | Financial Services / Credit | **0.54x** | Main |
-| RDY | ReadyTech Holdings | Technology / SaaS | **0.66x** | Main |
-| ACL | Australian Clinical Labs | Healthcare / Diagnostics | **0.74x** | Main |
-| PPS | Praemium | Financial Services / Asset Management | **0.74x** | Main |
-
-BOT (Botto) was removed from the original control set — no annual reports were available.
+| Ticker | Company | Sector | 5-Year Multiple |
+|--------|---------|--------|----------------|
+| PPE | People Infrastructure | Industrials / Staffing | **0.18x** |
+| ALC | Alcidion Group | Healthcare / Health IT | **0.26x** |
+| OFX | OFX Group | Financial Services / Payments | **0.38x** |
+| CVN | Carnarvon Energy | Energy / Oil & Gas Exploration | **0.42x** |
+| CLV | Clover Corporation | Consumer Defensive / Foods | **0.54x** |
+| PLT | Plenti Group | Financial Services / Credit | **0.54x** |
+| RDY | ReadyTech Holdings | Technology / SaaS | **0.66x** |
+| ACL | Australian Clinical Labs | Healthcare / Diagnostics | **0.74x** |
+| PPS | Praemium | Financial Services / Asset Management | **0.74x** |
 
 ---
 
@@ -73,38 +71,138 @@ The combination bonuses are what separate the top tier from the middle — a com
 
 ---
 
-## Full Scoring Table
+## How Each Company Scored
 
-All 20 companies across FY2019–FY2022 (main set). Signals shown as years-present / years-available.
+All 20 companies from the FY2019–FY2022 training set. Winners in green, controls in red. Hover a bar for the signal breakdown. The dashed line marks the winner average (52.6).
 
-| Ticker | Group | Yrs | OrdBk | Mrgn↑ | ExecT | Combo | FwdGuid | OrgGr | Score |
-|--------|-------|:---:|:-----:|:-----:|:-----:|:-----:|:-------:|:-----:|:-----:|
-| ACF | WIN | 3 | 3/3 | 3/3 | 3/3 | 2/3 | 3/3 | 1/3 | **90** |
-| MAH | WIN | 4 | 4/4 | 2/4 | 4/4 | 1/4 | 3/4 | 2/4 | **70** |
-| GNG | WIN | 4 | 4/4 | 2/4 | 4/4 | 1/4 | 2/4 | 1/4 | **66** |
-| DRO | WIN | 4 | 4/4 | 1/4 | 4/4 | 0/4 | 4/4 | 4/4 | **65** |
-| NWH | WIN | 4 | 4/4 | 1/4 | 4/4 | 1/4 | 3/4 | 0/4 | **63** |
-| PRN | WIN | 4 | 4/4 | 1/4 | 4/4 | 0/4 | 2/4 | 1/4 | **56** |
-| MND | WIN | 4 | 4/4 | 1/4 | 4/4 | 0/4 | 0/4 | 1/4 | **51** |
-| TLX | WIN | 3 | 0/3 | 1/3 | 3/3 | 0/3 | 3/3 | 2/3 | **35** |
-| DTL | WIN | 4 | 1/4 | 1/4 | 3/4 | 0/4 | 1/4 | 3/4 | **30** |
-| CMM | WIN | 4 | 0/4 | 1/4 | 4/4 | 0/4 | 4/4 | 0/4 | **30** |
-| NEU | WIN | 4 | 0/4 | 0/4 | 4/4 | 0/4 | 3/4 | 0/4 | **23** |
-| **Winner avg** | | | | | | | | | **52.6** |
-| ALC | CTRL | 4 | 4/4 | 3/4 | 4/4 | 0/4 | 4/4 | 0/4 | **70** |
-| RDY | CTRL | 4 | 2/4 | 1/4 | 4/4 | 0/4 | 4/4 | 0/4 | **45** |
-| ACL | CTRL | 2 | 0/2 | 2/2 | 2/2 | 0/2 | 1/2 | 0/2 | **40** |
-| PPS | CTRL | 4 | 1/4 | 2/4 | 3/4 | 0/4 | 4/4 | 1/4 | **40** |
-| OFX | CTRL | 4 | 1/4 | 2/4 | 4/4 | 0/4 | 2/4 | 1/4 | **39** |
-| PPE | CTRL | 4 | 1/4 | 1/4 | 3/4 | 0/4 | 3/4 | 0/4 | **31** |
-| CVN | CTRL | 4 | 2/4 | 0/4 | 2/4 | 0/4 | 3/4 | 0/4 | **30** |
-| CLV | CTRL | 4 | 0/4 | 2/4 | 3/4 | 0/4 | 1/4 | 3/4 | **28** |
-| PLT | CTRL | 2 | 0/2 | 1/2 | 1/2 | 0/2 | 1/2 | 1/2 | **25** |
-| **Control avg** | | | | | | | | | **38.7** |
+<div class="chart-wrap">
+  <canvas id="scoreChart"></canvas>
+</div>
+<p class="chart-caption">Winners averaged 52.6; controls averaged 38.7 — a 14-point gap. The key finding isn't the averages: no control ever had all three core signals (order book + margins + execution tone) firing in the same year. Four winners did.</p>
 
-**Separation: 14 points.** Overlap: ALC (70) scores above TLX, DTL, CMM, and NEU.
+<script>
+(function() {
+  var data = [
+    {t:'ACF', g:'W', s:100, ob:'3/3', mg:'3/3', et:'3/3', cb:'2/3', fg:'3/3', rg:'1/3'},
+    {t:'MAH', g:'W', s:70,  ob:'4/4', mg:'2/4', et:'4/4', cb:'1/4', fg:'3/4', rg:'2/4'},
+    {t:'ALC', g:'C', s:70,  ob:'4/4', mg:'3/4', et:'4/4', cb:'0/4', fg:'4/4', rg:'0/4'},
+    {t:'GNG', g:'W', s:66,  ob:'4/4', mg:'2/4', et:'4/4', cb:'1/4', fg:'2/4', rg:'1/4'},
+    {t:'DRO', g:'W', s:65,  ob:'4/4', mg:'1/4', et:'4/4', cb:'0/4', fg:'4/4', rg:'4/4'},
+    {t:'NWH', g:'W', s:63,  ob:'4/4', mg:'1/4', et:'4/4', cb:'1/4', fg:'3/4', rg:'0/4'},
+    {t:'PRN', g:'W', s:56,  ob:'4/4', mg:'1/4', et:'4/4', cb:'0/4', fg:'2/4', rg:'1/4'},
+    {t:'MND', g:'W', s:51,  ob:'4/4', mg:'1/4', et:'4/4', cb:'0/4', fg:'0/4', rg:'1/4'},
+    {t:'RDY', g:'C', s:45,  ob:'2/4', mg:'1/4', et:'4/4', cb:'0/4', fg:'4/4', rg:'0/4'},
+    {t:'ACL', g:'C', s:40,  ob:'0/2', mg:'2/2', et:'2/2', cb:'0/2', fg:'1/2', rg:'0/2'},
+    {t:'PPS', g:'C', s:40,  ob:'1/4', mg:'2/4', et:'3/4', cb:'0/4', fg:'4/4', rg:'1/4'},
+    {t:'OFX', g:'C', s:39,  ob:'1/4', mg:'2/4', et:'4/4', cb:'0/4', fg:'2/4', rg:'1/4'},
+    {t:'TLX', g:'W', s:35,  ob:'0/3', mg:'1/3', et:'3/3', cb:'0/3', fg:'3/3', rg:'2/3'},
+    {t:'PPE', g:'C', s:31,  ob:'1/4', mg:'1/4', et:'3/4', cb:'0/4', fg:'3/4', rg:'0/4'},
+    {t:'DTL', g:'W', s:30,  ob:'1/4', mg:'1/4', et:'3/4', cb:'0/4', fg:'1/4', rg:'3/4'},
+    {t:'CMM', g:'W', s:30,  ob:'0/4', mg:'1/4', et:'4/4', cb:'0/4', fg:'4/4', rg:'0/4'},
+    {t:'CVN', g:'C', s:30,  ob:'2/4', mg:'0/4', et:'2/4', cb:'0/4', fg:'3/4', rg:'0/4'},
+    {t:'CLV', g:'C', s:28,  ob:'0/4', mg:'2/4', et:'3/4', cb:'0/4', fg:'1/4', rg:'3/4'},
+    {t:'PLT', g:'C', s:25,  ob:'0/2', mg:'1/2', et:'1/2', cb:'0/2', fg:'1/2', rg:'1/2'},
+    {t:'NEU', g:'W', s:23,  ob:'0/4', mg:'0/4', et:'4/4', cb:'0/4', fg:'3/4', rg:'0/4'}
+  ];
 
-The combo column is the decisive one — no control ever triggered the compounding operator combination in any year. Four winners did.
+  var labels = data.map(function(d) { return d.t; });
+  var scores = data.map(function(d) { return d.s; });
+  var colors = data.map(function(d) {
+    return d.g === 'W' ? 'rgba(34,197,94,0.78)' : 'rgba(239,68,68,0.75)';
+  });
+  var borders = data.map(function(d) {
+    return d.g === 'W' ? 'rgba(22,163,74,1)' : 'rgba(220,38,38,1)';
+  });
+
+  var ctx = document.getElementById('scoreChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Rubric Score',
+        data: scores,
+        backgroundColor: colors,
+        borderColor: borders,
+        borderWidth: 1.5,
+        borderRadius: 3
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: function(items) {
+              var d = data[items[0].dataIndex];
+              return d.t + ' (' + (d.g === 'W' ? 'Winner' : 'Control') + ')  —  Score: ' + d.s;
+            },
+            label: function(item) { return ''; },
+            afterLabel: function(item) {
+              var d = data[item.dataIndex];
+              return [
+                'Order book:        ' + d.ob,
+                'Margin expansion:  ' + d.mg,
+                'Execution tone:    ' + d.et,
+                'Combo signal:      ' + d.cb,
+                'Forward guidance:  ' + d.fg,
+                'Revenue growth:    ' + d.rg
+              ];
+            }
+          },
+          backgroundColor: '#fff',
+          titleColor: '#1c1c1e',
+          bodyColor: '#6b7280',
+          borderColor: '#e5e7eb',
+          borderWidth: 1,
+          padding: 12,
+          bodyFont: { family: "'SF Mono', 'Fira Code', Consolas, monospace", size: 11 },
+          titleFont: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 12, weight: 'bold' }
+        }
+      },
+      scales: {
+        x: {
+          min: 0, max: 110,
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { stepSize: 20 }
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 12 }
+          }
+        }
+      }
+    },
+    plugins: [{
+      id: 'avg-lines',
+      afterDraw: function(chart) {
+        var c2 = chart.ctx;
+        var xAxis = chart.scales.x;
+        var yAxis = chart.scales.y;
+        [[52.6, 'rgba(22,163,74,0.5)', 'Winners avg 52.6'],
+         [38.7, 'rgba(220,38,38,0.5)', 'Controls avg 38.7']].forEach(function(item) {
+          var x = xAxis.getPixelForValue(item[0]);
+          c2.save();
+          c2.beginPath();
+          c2.moveTo(x, yAxis.top);
+          c2.lineTo(x, yAxis.bottom);
+          c2.lineWidth = 1.5;
+          c2.strokeStyle = item[1];
+          c2.setLineDash([4, 3]);
+          c2.stroke();
+          c2.fillStyle = item[1].replace('0.5', '0.9');
+          c2.font = "10.5px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+          c2.fillText(item[2], x + 4, yAxis.top + 12);
+          c2.restore();
+        });
+      }
+    }]
+  });
+})();
+</script>
 
 <div class="chart-wrap">
   <canvas id="scatterChart"></canvas>
