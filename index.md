@@ -11,7 +11,7 @@ title: "Can You Spot a Great Company Before It Takes Off — Just By Reading Its
 
 Every year, every publicly listed company publishes an annual report. Most people never read these. They're dry, long, and full of corporate jargon.
 
-But here's the thing: if you're trying to figure out whether a company is going to do well over the next five years, the annual report is one of the few documents where management has to put something real on paper. They have to disclose their order book, margins etc. They have to say something about where the business is going — and the next year's report will show whether they delivered.
+But here's the thing: if you're trying to figure out whether a company is going to do well over the next five years, the annual report is one of the few documents where management has to put something real on paper. They have to show their margins, disclose their strategy, say something about where the business is heading — and the next year's report will show whether they delivered. Some companies also choose to disclose their order book (the value of work already contracted but not yet completed) — and that choice, as it turns out, tells you a lot.
 
 I wanted to know: **can you use AI to read these reports and find signals that predict which companies will compound — before they do?** And if this works — can I make it (relatively) cheap? Anyone can dump a bunch of PDF documents into a powerful AI model and get good results. The trick is to do this with a cheaper model so you can target more companies without selling your kidneys.
 
@@ -26,7 +26,7 @@ I needed clear rules, not fuzzy ones. So I defined:
 
 I excluded everything in between. A company that went from $200M to $350M isn't clearly a winner or clearly a loser — that middle ground would just confuse the results.
 
-I picked 20 ASX small-caps from a 2021–2026 window: **11 winners** and **9 controls**. The winners ranged from 2.2x to 15x. The controls ranged from 0.18x (down 82%) to 0.74x (down 26%).
+I picked 20 ASX small-caps from a 2021–2026 window: **11 winners** and **9 controls**. The winners ranged from 2.2x to 15x (one documented borderline case at 2.2x, below the 2.5x threshold, kept with a note — full details on the [data page](data/)). The controls ranged from 0.18x (down 82%) to 0.74x (down 26%).
 
 #### Models
 
@@ -106,15 +106,19 @@ These five became the frozen rubric — **rubric-v1**. Every company was then sc
 
 Winners averaged **52.6 out of 100**. Controls averaged **38.7**. A gap of 14 points.
 
-That gap sounds small. But the interesting finding isn't the average — it's the combination.
+The scores aren't a black box — each of the five signals is worth a fixed share of 100 points (order book 30%, revenue growth 20%, margin expansion 20%, execution tone 15%, forward guidance 15%), tallied per year. A company that shows all five signals in all four years scores near 100; one that shows none scores near 0. ACF scores 90 because it hit the combination in every year available. NWH scores 63 because it had the order book and tone consistently but margins only expanded in three of four years.
+
+The gap sounds modest. But the interesting finding isn't the average — it's the combination.
 
 When I looked for companies that simultaneously had a growing order book, an execution-focused management tone, and no large acquisitions muddying the organic growth story, the result was stark:
 
 **6 of 11 winners hit this combination at some point. Zero of 9 controls ever did.**
 
+This combination was identified retrospectively by searching for what separated the two groups — which is why the out-of-sample tests later in this piece matter. But even within the training set, the clean zero on the control side is striking.
+
 Not 6 versus 1. Not 6 versus 2. Six versus zero.
 
-Opus — running blind, with sectors removed so it couldn't pattern-match on industry — confirmed the finding when asked to summarise what it saw:
+Opus — with sector information redacted so it couldn't pattern-match on industry — confirmed the finding when asked to summarise what it saw:
 
 > "Growing order book + tone consistent + execution-focused tone + no capital raise or bolt-on only acquisitions — the 'disciplined operator' combination indicating companies with genuine organic momentum backed by management credibility (A: 6/11, B: 0/9)."
 
@@ -124,7 +128,7 @@ A few real examples of what this looked like on paper:
 
 **DroneShield (DRO) — 15x over five years.** DroneShield makes counter-drone systems — technology to detect and disable drones in military and critical infrastructure settings. In FY2019, the company had just $3.6 million in revenue. But it disclosed an $80 million sales pipeline — 22 times its actual revenue. Every year, the order book grew: from under $1 million to $24 million by FY2022. Management tone was grounded and specific throughout. Rubric score: 65.
 
-**Acrow Limited (ACF) — 2.9x.** The smallest company in the set — $107 million market cap in 2021, which is tiny. All three signals present in all three years. Score: 90. The rubric doesn't care about size.
+**Acrow Limited (ACF) — 2.9x.** The smallest company in the set — $107 million market cap in 2021, which is tiny. All three signals in the disciplined-operator combination — growing order book, execution tone, no large acquisitions — present in every year available. Score: 90. The rubric doesn't care about size.
 
 *(Full scoring table for all 20 companies, plus rubric weights and cross-cycle validation: [data page](data/).)*
 
@@ -136,36 +140,36 @@ Some of the reversals here are more useful than the findings that confirmed expe
 
 **International expansion, entering new markets — completely useless.** Every single company, every single year, mentioned one or both. When a signal appears in both groups universally, it tells you nothing. It's just baseline corporate language.
 
-**Founder-led companies underperformed.** The conventional wisdom is that founders outperform — skin in the game, long-term thinking. In this dataset it went the other way. Most winners had professional management with an execution-focused tone. Most controls were founder-led. The tone mattered more than who held the title.
+**Founder-led companies underperformed (in this dataset).** The conventional wisdom is that founders outperform — skin in the game, long-term thinking. Here it went the other way. Most winners had professional management with an execution-focused tone. Most controls were founder-led. The tone mattered more than who held the title.
 
 **High insider ownership was more common among the losers.** The intuition is reasonable — if the CEO owns a big chunk of the company, they're incentivised to make good decisions. But the companies with the highest insider ownership in this dataset were all controls. Very high ownership in a small company may actually signal that professional investors haven't validated the business yet, which is a yellow flag rather than a green one.
 
-**Aggressive growth language predicted underperformance.** The companies that promised the most tended to deliver the least. The biggest compounders wrote annual reports that were almost boring — specific numbers, project updates, delivery milestones. The ones that talked about transformational opportunities and massive markets were more likely to be in the losing group.
+**Aggressive growth language barely discriminated — but the direction surprised me.** Both groups used it, but it was slightly more prevalent among the losers: 7 of 9 controls used aggressive language in most years, versus 6 of 11 winners. The real separation wasn't the presence of ambition — it was what sat alongside it. Winners paired measured language with actual delivery. The losing companies that talked the biggest game rarely backed it up in the next year's report.
 
-**Risk disclosure counts meant nothing.** Both groups disclosed roughly the same volume of risks per year. The number is irrelevant. What matters is whether the tone is deteriorating at the same time the risks are growing — a company that openly discloses risks while management stays consistently execution-focused reads very differently from one where both the risks and the tone are heading in the wrong direction simultaneously.
+**Risk disclosure counts meant nothing.** Both groups disclosed roughly the same volume of risks per year. The number is irrelevant. A company that discloses significant risks while management tone stays consistently execution-focused is probably different from one where the risks and the tone are both deteriorating — but this experiment tested the counts, not that interaction. That's a follow-up question.
 
 ---
 
 ## Does It Work on Companies I Didn't Train It On?
 
-The whole experiment used FY2019–2022 data. I'd designed the rubric by looking at the outcomes. The obvious question: does it work on data it never saw?
+The rubric was built on FY2019–2022 data — reports from the years leading into and overlapping the measurement window. A company flagged by the rubric in 2019 should, if the signals are predictive, have already been on the radar before the five-year clock started ticking. But the rubric was designed by looking at outcomes. The honest test is whether it works on data it never saw.
 
-I ran one test. **Pro Medicus (PME)** is a medical imaging software company. I scored its FY2016 and FY2017 annual reports — five years before the measurement window even started — using the exact same frozen rubric.
+I ran two tests, both using the same frozen rubric, both on a different time window (2016–2021) that predates the training data entirely.
 
-PME FY2016 score: **100 out of 100.**
+**Pro Medicus (PME)** is a medical imaging software company. Score on its FY2016 annual report: **100 out of 100.**
 
 Every signal was present. The company disclosed $100 million in forward contracted revenue — 3.6 times its annual revenue at the time, described as having "doubled over the past 12 months." Operating margins were expanding from 28.6% to 34.2%. Revenue was growing at 57% organically. Management tone was execution-focused, increasingly confident.
 
 The actual quote from the 2016 report:
 > "Forward contracted revenue doubled over the past 12 months and now exceeds $100M AUD over the next five years."
 
-PME went from $5.08 per share in 2016 to $55.63 in 2021 — a 10.96x return. The rubric would have flagged it as a top candidate at the start of that run, years before most people had heard of the company.
+PME went from $5.08 per share in 2016 to $55.63 in 2021 — a 10.96x return.
 
 *(What the model actually saw in the 2016 annual report, signal by signal: [PME page](pme/).)*
 
-I also tested the rubric on a biotech, Telix Pharmaceuticals (TLX). Biotech is a harder case — there's no order book, no contracted backlog. But Telix disclosed clinical trial milestones and regulatory progress with the same specificity that a construction company uses for contract wins. The rubric counted this as "quantified pipeline." TLX scored 35 — below average — because it had no order book and no margin expansion in its pre-revenue years. But it showed execution tone and increasing confidence in all three years. It ended up as a 2.67x winner.
+**Hub24 (HUB)** is an investment platform — technology, not engineering. Score on its FY2016 annual report: **48 out of 100.** No traditional order book (platform businesses don't have contract backlogs in the same way), but expanding margins, execution-focused tone, and specific near-term guidance including a "profit before tax" target. HUB went 6.65x over the same window. A score of 48 puts it above the control average (38.7) but below the winner average (52.6) — appropriately ambiguous for a company that was genuinely compounding but not yet showing all five signals cleanly.
 
-The signals don't require a particular type of company. What they require is: *forward visibility of some kind, improving economics, and management that speaks in specifics rather than platitudes.* The form varies by sector. The structure doesn't.
+Both tested companies exceeded the winner threshold. Neither was a false positive. The rubric didn't have outcome data for either — it just saw the same annual report any investor could have read in 2016.
 
 ---
 
@@ -177,13 +181,13 @@ I ran the same pipeline on 57 current ASX small-caps — most recent annual repo
 
 Starting from ~2,000 ASX-listed tickers, a quant filter cut the list to companies in the right size range with enough daily trading volume to be investable. Of the ~200 that passed, I was able to get annual report PDFs for 57. The remaining ~140 don't have accessible IR pages.
 
-The top scorer was **QOR (Qoria)** at **100 out of 100** — the only company in the entire dataset, training set included, to match PME's FY2016 score. Qoria makes parental controls and digital safety software for schools. Contracted recurring revenue growing at ~40%, margins expanding, specific ARR targets disclosed, entirely organic growth. Every signal present.
+The top scorer was **QOR (Qoria)** at **100 out of 100** — the only company in the entire dataset, training set included, to match PME's FY2016 score. Qoria makes parental controls and digital safety software for schools. Contracted recurring revenue growing at ~40%, margins expanding, specific annual recurring revenue targets disclosed, entirely organic growth. Every signal present.
 
 Behind it: **NXL (Nuix)**, an investigative analytics company, at 96. **FWD (Fleetwood)**, a modular buildings company with an order book and margin profile almost identical to the training set's engineering winners, at 88.
 
 Three things stood out from the scan:
 
-**The rubric finds companies outside the engineering cluster.** QOR, NXL, and several others are software or SaaS businesses — not the mining services companies that dominated the training set. The signals are showing up in different sectors, which is a good sign the rubric isn't just a proxy for "is this an E&C company in a capex boom."
+**The rubric finds companies outside the engineering cluster.** QOR, NXL, and several others are software or SaaS (software-as-a-service) businesses — not the mining services companies that dominated the training set. The signals are showing up in different sectors, which is a good sign the rubric isn't just a proxy for "is this an engineering company in a spending boom." This mirrors what the training set showed: Telix Pharmaceuticals (TLX), a biotech that was one of the 11 training winners, showed the same execution tone and increasing confidence signals as the industrials, even though its "order book" was clinical trial milestones rather than construction contracts.
 
 **PLT (Plenti Group) reappears — but on the other side.** Plenti was a control in the training set, scoring 25 and declining 46%. Its current annual report scores 55. Margin expansion and loan book growth are now present. Whether the business has genuinely turned or the rubric is picking up noise is exactly the kind of question that requires qualitative follow-up.
 
@@ -199,17 +203,17 @@ The envelope is sealed. Check back in 2030.
 
 Alcidion Group scored **70 out of 100** — highest among the controls, ahead of four actual winners. Quantified pipeline every year, expanding margins, execution-focused tone throughout. Market cap went from $501M to $132M. Down 74%.
 
-The rubric believed the annual reports. The market eventually didn't.
+The rubric believed the annual reports. The stock market eventually didn't.
 
-Alcidion was genuinely doing what it said it was doing. The problem was the market — NHS and Australian public hospital procurement is slow, political, and margin-compressing by design. The business model didn't scale, and no annual report will tell you that directly.
+Alcidion was genuinely doing what it said it was doing. The problem was its customer base — NHS and Australian public hospital procurement is slow, political, and margin-compressing by design. The business model didn't scale, and no annual report will tell you that directly.
 
-A high score means the company shows up operationally. It doesn't mean the market will reward it. The rubric is a **necessary condition, not a sufficient one.**
+A high score means the company shows up operationally. It doesn't mean the stock market will reward it. The rubric raises the odds in one direction — ALC shows a high score can still lose, and NEU (8.7x on a score of 23) shows a low score can still win. Think of it as a filter that eliminates the weakest candidates, not a guarantee in either direction.
 
 ---
 
 ## Limitations (the honest version)
 
-**The sector problem.** Seven of eleven winners were in Australian engineering, construction, or mining services. The 2021–2026 period happened to be a massive infrastructure and resources spending cycle in Australia — a capex supercycle. The signals may partly be picking up "was this company in the right industry at the right time" rather than pure company quality. I've tried to address this by including TLX, PME, NEU, DTL, and CMM — none of which are engineering — but with 7 of 11 in one sector, this limitation is real.
+**The sector problem.** Six of eleven winners were in Australian engineering and construction, with a seventh (CMM) in gold mining — sectors that all benefited from a massive infrastructure and resources spending surge in Australia over 2021–2026 (a "capex supercycle" — years when government and private spending on infrastructure, mining, and defence all ran high simultaneously). The signals may partly be picking up "was this company in the right industry at the right time" rather than pure company quality. The four non-resources winners in the training set — TLX, NEU, DTL, and DRO (defence) — showed the same signal patterns, which is encouraging. But with 7 of 11 concentrated in one macro tailwind, this limitation is real.
 
 **Twenty companies.** This is an experiment, not a study. The right follow-up is scoring the next 100 small-caps today and tracking what happens in five years, with no knowledge of outcomes at scoring time.
 
@@ -229,6 +233,6 @@ The other next step is the only one that would really validate this: score 50 co
 
 ---
 
-*Total cost of the AI extractions and comparisons: approximately $4 across roughly 80 annual report readings.*
+*Total cost: ~$4 for the core methodology test (model comparison, rubric validation, Opus comparison); ~$22 for the full pipeline including all ~80 annual report readings, forward scoring, and infrastructure build.*
 
 *All scripts, training sets, extraction outputs, and scoring results are in the [5houses pipeline repository](https://github.com/grumpyclimber/5houses).*
