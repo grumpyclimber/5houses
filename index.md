@@ -5,7 +5,7 @@ title: "Can You Spot a Great Company Before It Takes Off — Just By Reading Its
 
 # Can You Spot a Great Company Before It Takes Off — Just By Reading Its Annual Report?
 
-*I spent $4 and a few hours running an experiment to find out.*
+*I spent ~30$ and a few hours running an experiment to find out.*
 
 ---
 
