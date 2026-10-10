@@ -3,6 +3,10 @@ description: >
   An AI experiment: reading annual reports to find early signals of which small-cap
   companies will compound — before they do.
 
+# GA4 measurement ID (G-XXXXXXXXXX); the tag is omitted while empty. Created with
+# apps/infra/scripts/setup-ga4.sh in the shared GA4 account.
+ga4_id: "G-9PPFQJP3JV"
+
 # For a project site (github.com/grumpyclimber/5houses → grumpyclimber.github.io/5houses):
 #   baseurl: "/5houses"
 # For a custom domain or user/org site:

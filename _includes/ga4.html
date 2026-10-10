@@ -1,0 +1,17 @@
+{%- comment -%}
+  GA4, production builds only (GitHub Pages builds with JEKYLL_ENV=production). Same tag as front-cdo:
+  the dataLayer queue is set up before gtag.js loads and gtag pushes `arguments`, not a rest array.
+  Automation (navigator.webdriver) and the 800x600 headless default never load the tag. A device that has
+  opened any page with ?internal=1 reports traffic_type=internal (?internal=0 clears it), which the
+  property's "Internal Traffic" data filter drops. Set `ga4_id` in _config.yml.
+{%- endcomment -%}
+{%- if jekyll.environment == "production" and site.ga4_id != "" -%}
+<script>
+(function(){try{var q=location.search.match(/[?&]internal=([01])/);if(q){if(q[1]==="1")localStorage.setItem("cdo_internal","1");else localStorage.removeItem("cdo_internal");}}catch(e){}
+if(navigator.webdriver||(screen.width===800&&screen.height===600))return;
+var internal=false;try{internal=localStorage.getItem("cdo_internal")==="1";}catch(e){}
+window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};
+window.gtag('js',new Date());window.gtag('config','{{ site.ga4_id }}',internal?{traffic_type:'internal'}:{});
+var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}';document.head.appendChild(s);})();
+</script>
+{%- endif -%}
