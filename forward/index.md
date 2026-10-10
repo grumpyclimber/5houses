@@ -5,7 +5,7 @@ title: "Forward Scan — What the Rubric Finds Today"
 
 # Forward Scan — What the Rubric Finds Today
 
-*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?](/)*
+*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?]({{ '/' | relative_url }})*
 
 The rubric was built on historical data — companies scored after outcomes were known. The more useful question is what it finds when pointed at current annual reports, with no knowledge of what happens next.
 

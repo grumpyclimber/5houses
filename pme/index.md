@@ -5,7 +5,7 @@ title: "Pro Medicus FY2016 — A Perfect Score, Five Years Early"
 
 # Pro Medicus FY2016 — A Perfect Score, Five Years Early
 
-*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?](/)*
+*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?]({{ '/' | relative_url }})*
 
 Pro Medicus (PME) is a medical imaging software company. It makes Visage — a platform that hospital radiology departments use to view and process medical scans. In 2016, it was a small company. By 2021, it had grown 10.96x.
 

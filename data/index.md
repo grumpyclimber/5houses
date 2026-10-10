@@ -5,7 +5,7 @@ title: "Data — Training Set, Scores, and Rubric"
 
 # Data — Training Set, Scores, and Rubric
 
-*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?](/)*
+*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?]({{ '/' | relative_url }})*
 
 ---
 

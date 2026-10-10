@@ -5,7 +5,7 @@ title: "The Prompts — What I Actually Asked the Models"
 
 # The Prompts — What I Actually Asked the Models
 
-*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?](/)*
+*Supplementary page for: [Can You Spot a Great Company Before It Takes Off?]({{ '/' | relative_url }})*
 
 Two prompts were used in this experiment. The first is the broad extraction prompt — what Sonnet was given to read 70 annual reports. The second is the targeted prompt — the narrower version tested against DeepSeek Flash to find which signals a cheap model could extract reliably.
 
