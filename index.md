@@ -54,7 +54,7 @@ So instead of guessing upfront, I designed (or was I lazy and asked Opus to do t
 
 I picked four AI models to test this activity: Claude Opus, Claude Sonnet, DeepSeek Pro, and DeepSeek Flash. Opus is the most thorough and expensive; Flash is fast and cheap.
 
-Before running all 20 companies, I ran a calibration test. I fed all four models the same annual report — Data#3 (ticker: DTL), an IT services company — and compared their answers against each other. Opus was the reference. The question was: which cheaper model comes closest?
+Before running all 20 companies, I ran a calibration test. I fed all four models the same annual report — Data#3 (ticker: <a href="https://franketf.dev/stock/DTL" rel="noopener">DTL</a>), an IT services company — and compared their answers against each other. Opus was the reference. The question was: which cheaper model comes closest? (Links on company names and tickers go to Frank ETF, a free tool I built that shows which ASX ETFs hold a company and what moved its price.)
 
 Here's a concrete example of where they diverged. One field in the template was **insider ownership %** — what percentage of the company's shares do its own executives own? This isn't always stated directly. Sometimes you have to find the share registry section, count the shares attributed to directors, divide by total shares on issue, and calculate the number yourself.
 
@@ -106,7 +106,7 @@ These five became the frozen rubric — **rubric-v1**. Every company was then sc
 
 Winners averaged **52.6 out of 100**. Controls averaged **38.7**. A gap of 14 points.
 
-The scores aren't a black box — each of the five signals is worth a fixed share of 100 points (order book 30%, revenue growth 20%, margin expansion 20%, execution tone 15%, forward guidance 15%), tallied per year. A company that shows all five signals in all four years scores near 100; one that shows none scores near 0. ACF scores 90 because it hit the combination in every year available. NWH scores 63 because it had the order book and tone consistently but margins only expanded in three of four years.
+The scores aren't a black box — each of the five signals is worth a fixed share of 100 points (order book 30%, revenue growth 20%, margin expansion 20%, execution tone 15%, forward guidance 15%), tallied per year. A company that shows all five signals in all four years scores near 100; one that shows none scores near 0. ACF scores 90 because it hit the combination in every year available. <a href="https://franketf.dev/stock/NWH" rel="noopener">NWH</a> scores 63 because it had the order book and tone consistently but margins only expanded in three of four years.
 
 The gap sounds modest. But the interesting finding isn't the average — it's the combination.
 
@@ -126,7 +126,7 @@ A few real examples of what this looked like on paper:
 
 **NRW Holdings (NWH) — 5.6x over five years.** This is an Australian engineering and construction company. Its order book (the dollar value of contracts already signed but not yet completed) grew from $2.2 billion to $5.2 billion between FY2019 and FY2022. Margins expanded in three of four years. Every year, the CEO's letter contained specific project names, specific workforce numbers, specific schedule milestones. Rubric score: 63.
 
-**DroneShield (DRO) — 15x over five years.** DroneShield makes counter-drone systems — technology to detect and disable drones in military and critical infrastructure settings. In FY2019, the company had just $3.6 million in revenue. But it disclosed an $80 million sales pipeline — 22 times its actual revenue. Every year, the order book grew: from under $1 million to $24 million by FY2022. Management tone was grounded and specific throughout. Rubric score: 65.
+**DroneShield (<a href="https://franketf.dev/stock/DRO" rel="noopener">DRO</a>) — 15x over five years.** DroneShield makes counter-drone systems — technology to detect and disable drones in military and critical infrastructure settings. In FY2019, the company had just $3.6 million in revenue. But it disclosed an $80 million sales pipeline — 22 times its actual revenue. Every year, the order book grew: from under $1 million to $24 million by FY2022. Management tone was grounded and specific throughout. Rubric score: 65.
 
 **Acrow Limited (ACF) — 2.9x.** The smallest company in the set — $107 million market cap in 2021, which is tiny. All three signals in the disciplined-operator combination — growing order book, execution tone, no large acquisitions — present in every year available. Score: 90. The rubric doesn't care about size.
 
@@ -156,7 +156,7 @@ The rubric was built on FY2019–2022 data — reports from the years leading in
 
 I ran two tests, both using the same frozen rubric, both on a different time window (2016–2021) that predates the training data entirely.
 
-**Pro Medicus (PME)** is a medical imaging software company. Score on its FY2016 annual report: **100 out of 100.**
+**Pro Medicus (<a href="https://franketf.dev/stock/PME" rel="noopener">PME</a>)** is a medical imaging software company. Score on its FY2016 annual report: **100 out of 100.**
 
 Every signal was present. The company disclosed $100 million in forward contracted revenue — 3.6 times its annual revenue at the time, described as having "doubled over the past 12 months." Operating margins were expanding from 28.6% to 34.2%. Revenue was growing at 57% organically. Management tone was execution-focused, increasingly confident.
 
@@ -167,7 +167,7 @@ PME went from $5.08 per share in 2016 to $55.63 in 2021 — a 10.96x return.
 
 *(What the model actually saw in the 2016 annual report, signal by signal: [PME page](pme/).)*
 
-**Hub24 (HUB)** is an investment platform — technology, not engineering. Score on its FY2016 annual report: **48 out of 100.** No traditional order book (platform businesses don't have contract backlogs in the same way), but expanding margins, execution-focused tone, and specific near-term guidance including a "profit before tax" target. HUB went 6.65x over the same window. A score of 48 puts it above the control average (38.7) but below the winner average (52.6) — appropriately ambiguous for a company that was genuinely compounding but not yet showing all five signals cleanly.
+**Hub24 (<a href="https://franketf.dev/stock/HUB" rel="noopener">HUB</a>)** is an investment platform — technology, not engineering. Score on its FY2016 annual report: **48 out of 100.** No traditional order book (platform businesses don't have contract backlogs in the same way), but expanding margins, execution-focused tone, and specific near-term guidance including a "profit before tax" target. HUB went 6.65x over the same window. A score of 48 puts it above the control average (38.7) but below the winner average (52.6) — appropriately ambiguous for a company that was genuinely compounding but not yet showing all five signals cleanly.
 
 Both tested companies exceeded the winner threshold. Neither was a false positive. The rubric didn't have outcome data for either — it just saw the same annual report any investor could have read in 2016.
 
@@ -183,11 +183,11 @@ Starting from ~2,000 ASX-listed tickers, a quant filter cut the list to companie
 
 The top scorer was **QOR (Qoria)** at **100 out of 100** — the only company in the entire dataset, training set included, to match PME's FY2016 score. Qoria makes parental controls and digital safety software for schools. Contracted recurring revenue growing at ~40%, margins expanding, specific annual recurring revenue targets disclosed, entirely organic growth. Every signal present.
 
-Behind it: **NXL (Nuix)**, an investigative analytics company, at 96. **FWD (Fleetwood)**, a modular buildings company with a margin profile similar to the training set's engineering winners (EBIT 2% → 7.5%), at 88.
+Behind it: **<a href="https://franketf.dev/stock/NXL" rel="noopener">NXL</a> (Nuix)**, an investigative analytics company, at 96. **FWD (Fleetwood)**, a modular buildings company with a margin profile similar to the training set's engineering winners (EBIT 2% → 7.5%), at 88.
 
 Three things stood out from the scan:
 
-**The rubric finds companies outside the engineering cluster.** QOR, NXL, and several others are software or SaaS (software-as-a-service) businesses — not the mining services companies that dominated the training set. The signals are showing up in different sectors, which is a good sign the rubric isn't just a proxy for "is this an engineering company in a spending boom." This mirrors what the training set showed: Telix Pharmaceuticals (TLX), a biotech that was one of the 11 training winners, showed the same execution tone and increasing confidence signals as the industrials, even though its "order book" was clinical trial milestones rather than construction contracts.
+**The rubric finds companies outside the engineering cluster.** QOR, NXL, and several others are software or SaaS (software-as-a-service) businesses — not the mining services companies that dominated the training set. The signals are showing up in different sectors, which is a good sign the rubric isn't just a proxy for "is this an engineering company in a spending boom." This mirrors what the training set showed: Telix Pharmaceuticals (<a href="https://franketf.dev/stock/TLX" rel="noopener">TLX</a>), a biotech that was one of the 11 training winners, showed the same execution tone and increasing confidence signals as the industrials, even though its "order book" was clinical trial milestones rather than construction contracts.
 
 **PLT (Plenti Group) reappears — but on the other side.** Plenti was a control in the training set, scoring 25 and declining 46%. Its current annual report scores 55. Margin expansion and loan book growth are now present. Whether the business has genuinely turned or the rubric is picking up noise is exactly the kind of question that requires qualitative follow-up.
 
@@ -201,19 +201,19 @@ The envelope is sealed. Check back in 2030.
 
 ## The Hard Case: ALC
 
-Alcidion Group scored **70 out of 100** — highest among the controls, ahead of four actual winners. Quantified pipeline every year, expanding margins, execution-focused tone throughout. Market cap went from $501M to $132M. Down 74%.
+<a href="https://franketf.dev/stock/ALC" rel="noopener">Alcidion Group</a> scored **70 out of 100** — highest among the controls, ahead of four actual winners. Quantified pipeline every year, expanding margins, execution-focused tone throughout. Market cap went from $501M to $132M. Down 74%.
 
 The rubric believed the annual reports. The stock market eventually didn't.
 
 Alcidion was genuinely doing what it said it was doing. The problem was its customer base — NHS and Australian public hospital procurement is slow, political, and margin-compressing by design. The business model didn't scale, and no annual report will tell you that directly.
 
-A high score means the company shows up operationally. It doesn't mean the stock market will reward it. The rubric raises the odds in one direction — ALC shows a high score can still lose, and NEU (8.7x on a score of 23) shows a low score can still win. Think of it as a filter that eliminates the weakest candidates, not a guarantee in either direction.
+A high score means the company shows up operationally. It doesn't mean the stock market will reward it. The rubric raises the odds in one direction — ALC shows a high score can still lose, and <a href="https://franketf.dev/stock/NEU" rel="noopener">NEU</a> (8.7x on a score of 23) shows a low score can still win. Think of it as a filter that eliminates the weakest candidates, not a guarantee in either direction.
 
 ---
 
 ## Limitations (the honest version)
 
-**The sector problem.** Six of eleven winners were in Australian engineering and construction, with a seventh (CMM) in gold mining — sectors that all benefited from a massive infrastructure and resources spending surge in Australia over 2021–2026 (a "capex supercycle" — years when government and private spending on infrastructure, mining, and defence all ran high simultaneously). The signals may partly be picking up "was this company in the right industry at the right time" rather than pure company quality. The four non-resources winners in the training set — TLX, NEU, DTL, and DRO (defence) — showed the same signal patterns, which is encouraging. But with 7 of 11 concentrated in one macro tailwind, this limitation is real.
+**The sector problem.** Six of eleven winners were in Australian engineering and construction, with a seventh (<a href="https://franketf.dev/stock/CMM" rel="noopener">CMM</a>) in gold mining — sectors that all benefited from a massive infrastructure and resources spending surge in Australia over 2021–2026 (a "capex supercycle" — years when government and private spending on infrastructure, mining, and defence all ran high simultaneously). The signals may partly be picking up "was this company in the right industry at the right time" rather than pure company quality. The four non-resources winners in the training set — TLX, NEU, DTL, and DRO (defence) — showed the same signal patterns, which is encouraging. But with 7 of 11 concentrated in one macro tailwind, this limitation is real.
 
 **Twenty companies.** This is an experiment, not a study. The right follow-up is scoring the next 100 small-caps today and tracking what happens in five years, with no knowledge of outcomes at scoring time.
 
@@ -231,8 +231,12 @@ The most important missing piece is a biotech version. NEU (Neuren Pharmaceutica
 
 The other next step is the only one that would really validate this: score 50 companies now, open the envelope in 2030, report back.
 
+There's also an ownership side I haven't touched. Which ETFs already hold these names, and how much of a stock's move might be fund flows rather than the company itself, is the next thing worth looking at. <a href="https://franketf.dev/" rel="noopener">Frank ETF</a> is where I look at that — it's an ASX ETF explorer I built, and it's a lookup tool, not a verdict on anything in this experiment.
+
 ---
 
 *Total cost: ~$4 for the core methodology test (model comparison, rubric validation, Opus comparison); ~$22 for the full pipeline including all ~80 annual report readings, forward scoring, and infrastructure build.*
+
+*Companion tool: <a href="https://franketf.dev/" rel="noopener">Frank ETF (franketf.dev)</a>, an ASX ETF explorer.*
 
 *All scripts, training sets, extraction outputs, and scoring results are in the [5houses pipeline repository](https://github.com/grumpyclimber/5houses).*
