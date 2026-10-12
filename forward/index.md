@@ -139,11 +139,11 @@ A score above 50 puts a company in the top half of the training set's winners. I
 
 ## What Stands Out
 
-**QOR (Qoria) is the highest-scoring company in the entire dataset** — including the training set. 100/100 on the current rubric, matching PME FY2016. Qoria makes parental controls software (Circle, Bark) sold to schools and families. It had contracted ARR growing at ~40%, expanding margins, and specific forward guidance on ARR targets.
+**QOR (Qoria) is the highest-scoring company in the entire dataset** — including the training set. 100/100 on the current rubric, matching <a href="https://franketf.dev/stock/PME" rel="noopener">PME</a> FY2016. Qoria makes parental controls software (Circle, Bark) sold to schools and families. It had contracted ARR growing at ~40%, expanding margins, and specific forward guidance on ARR targets. (Links on tickers go to Frank ETF, a free tool I built that shows which ASX ETFs hold a company and what moved its price.)
 
 **Update (July 2026): Qoria was acquired by US digital safety group Aura Consolidated Group and delisted from the ASX on 20 July 2026.** Shareholders approved the scheme 91.49% in favour; the implied acquisition price of ~A$0.40 per share represented a 32.4% premium to the 30-day VWAP. The combined entity now trades on the ASX as AXQ. The rubric scored it 100 before any of this was public — it was showing every signal the training winners showed, and it was acquired at a premium within months of the scan.
 
-**The rubric finds companies outside the engineering/mining cluster.** QOR, NXL, DUG, and VGL are all technology or software companies — not the industrials that dominated the training set. This is the same property the rubric showed with PME: the signals aren't sector-specific.
+**The rubric finds companies outside the engineering/mining cluster.** QOR, <a href="https://franketf.dev/stock/NXL" rel="noopener">NXL</a>, DUG, and VGL are all technology or software companies — not the industrials that dominated the training set. This is the same property the rubric showed with PME: the signals aren't sector-specific.
 
 **PLT is interesting.** It was a control in the training set (0.54x over 2021–2026). It now scores 55 — in the winner zone. Whether the business has genuinely turned or the rubric is picking up noise is exactly the kind of question that needs qualitative follow-up.
 
@@ -155,7 +155,7 @@ This is not a buy list. The same caveats that apply to the main experiment apply
 
 - **No outcome data.** We don't know what any of these companies will do. The rubric is a filter, not a prediction.
 - **One year of data.** The training rubric worked on multi-year trajectories — signals consistent across 3–4 years. This forward scan uses one annual report per company. A single strong year may not reflect trajectory.
-- **The ALC problem persists.** A company can score 70 and be in a structurally unwinnable market. The rubric can't see that.
+- **The <a href="https://franketf.dev/stock/ALC" rel="noopener">ALC</a> problem persists.** A company can score 70 and be in a structurally unwinnable market. The rubric can't see that.
 - **57 of ~200 gate-passing companies scanned.** The 143 not yet scored may contain higher-scoring or lower-scoring companies than those shown.
 
 The right use of this table: these are companies worth reading more carefully. The rubric says they're showing up operationally. Whether their market structure allows them to compound is a separate question — one the rubric can't answer.

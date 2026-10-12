@@ -7,7 +7,7 @@ title: "Pro Medicus FY2016 — A Perfect Score, Five Years Early"
 
 *Supplementary page for: [Can You Spot a Great Company Before It Takes Off?]({{ '/' | relative_url }})*
 
-Pro Medicus (PME) is a medical imaging software company. It makes Visage — a platform that hospital radiology departments use to view and process medical scans. In 2016, it was a small company. By 2021, it had grown 10.96x.
+Pro Medicus (<a href="https://franketf.dev/stock/PME" rel="noopener">PME</a>) is a medical imaging software company. It makes Visage — a platform that hospital radiology departments use to view and process medical scans. In 2016, it was a small company. By 2021, it had grown 10.96x. (Links on tickers go to Frank ETF, a free tool I built that shows which ASX ETFs hold a company and what moved its price.)
 
 The main experiment used FY2019–2022 data to build the rubric. PME was scored on its FY2016 annual report — five years earlier, using the exact same frozen five-signal rubric — as an out-of-sample test.
 
